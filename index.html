@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LimenXR</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0e0e0e;
+            color: #f5f5f5;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 640px;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 42px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .email {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px solid #ffffff55;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #ffffff;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .lang-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: 1px solid #ffffff55;
+            color: #fff;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .lang-btn:hover {
+            border-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<button class="lang-btn" onclick="toggleLanguage()">EN</button>
+
+<div class="container">
+    <h1>LimenXR</h1>
+
+    <p id="text1">
+        LimenXR si sta sviluppando silenziosamente.
+    </p>
+
+    <p id="text2">
+        Stiamo costruendo esperienze immersive e soluzioni XR pensate per trasformare il modo in cui le persone interagiscono con spazi, contenuti e narrazioni.
+    </p>
+
+    <p id="text3">
+        Il sito completo arriverà presto.
+    </p>
+
+    <p id="text4">
+        Se siete interessati a possibili collaborazioni o partnership, potete contattarci qui:
+    </p>
+
+    <div class="email">
+        <a href="mailto:info.limenxr@gmail.com">info.limenxr@gmail.com</a>
+    </div>
+
+    <div class="footer">
+        © 2026 LimenXR
+    </div>
+</div>
+
+<script>
+let currentLang = "it";
+
+function toggleLanguage() {
+    if (currentLang === "it") {
+        document.getElementById("text1").innerText =
+            "LimenXR is developing quietly.";
+        document.getElementById("text2").innerText =
+            "We are building immersive experiences and XR solutions designed to transform how people interact with spaces, content, and narratives.";
+        document.getElementById("text3").innerText =
+            "The full website will be available soon.";
+        document.getElementById("text4").innerText =
+            "If you are interested in collaborations or partnerships, you can contact us here:";
+        document.querySelector(".lang-btn").innerText = "IT";
+        currentLang = "en";
+    } else {
+        document.getElementById("text1").innerText =
+            "LimenXR si sta sviluppando silenziosamente.";
+        document.getElementById("text2").innerText =
+            "Stiamo costruendo esperienze immersive e soluzioni XR pensate per trasformare il modo in cui le persone interagiscono con spazi, contenuti e narrazioni.";
+        document.getElementById("text3").innerText =
+            "Il sito completo arriverà presto.";
+        document.getElementById("text4").innerText =
+            "Se siete interessati a possibili collaborazioni o partnership, potete contattarci qui:";
+        document.querySelector(".lang-btn").innerText = "EN";
+        currentLang = "it";
+    }
+}
+</script>
+
+</body>
+</html>
