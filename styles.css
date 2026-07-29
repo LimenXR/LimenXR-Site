@@ -3198,3 +3198,21 @@ body {
 html.loader-skipped .hero__title .line > span { animation-delay: .08s; }
 html.loader-skipped .hero__title .line:nth-child(2) > span { animation-delay: .16s; }
 html.loader-skipped .hero__title .line:nth-child(3) > span { animation-delay: .24s; }
+
+
+/* V29 — stable case-study subtitle rendering
+   The previous outline used -webkit-text-stroke on a large variable font,
+   which produced internal artifacts on several GPUs and browsers. */
+.case-modal__hero h2 > em {
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  letter-spacing: -.055em;
+  color: rgba(255,255,255,.24);
+  -webkit-text-stroke: 0 !important;
+  paint-order: normal;
+  text-shadow: none;
+  text-rendering: optimizeLegibility;
+  backface-visibility: visible;
+}
