@@ -8,7 +8,7 @@
   --accent: #00b8d9;
   --accent-2: #66e7ff;
   --pad: clamp(22px, 4vw, 72px);
-  --display: "Inter Display", "Inter", "Arial Narrow", Arial, sans-serif;
+  --display: "Inter Tight", "Inter", Arial, sans-serif;
   --body: "Inter", Arial, sans-serif;
 }
 
@@ -3097,3 +3097,104 @@ a.project-visual{text-decoration:none}a.case-trigger{box-sizing:border-box}
 .project-page{background:#ebe8e2;color:#09090b;cursor:auto}.project-page .noise{position:fixed}.project-page__header{position:fixed;inset:0 0 auto;z-index:60;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:rgba(7,7,9,.9);color:#fff;border-bottom:1px solid rgba(255,255,255,.12);backdrop-filter:blur(16px)}.project-page__brand{display:block;width:112px}.project-page__brand img{display:block;width:100%;height:auto}.project-page__actions{display:flex;align-items:center;gap:22px}.project-page__actions a{font-size:9px;letter-spacing:.14em}.project-page .case-modal__scroll{height:auto;overflow:visible}.project-page .case-modal__hero{padding-top:120px}.project-page .case-modal__body{padding-bottom:60px}.project-page .image-viewer{position:fixed}.project-page__cta{margin-top:90px;padding-top:44px;border-top:1px solid rgba(0,0,0,.2)}.project-page__cta .contact-cta{color:#09090b;border-color:rgba(0,0,0,.35);margin-top:0}.project-page__home-link{display:inline-block;margin-top:28px;font-size:10px;letter-spacing:.14em}.project-page .scroll-progress{z-index:80}
 @media(max-width:900px){.project-page__header{height:64px;padding-inline:20px}.project-page__brand{width:92px}.project-page__actions{gap:14px}.project-page__back{font-size:0!important}.project-page__back:after{content:'HOME ↗';font-size:9px}.project-page .case-modal__hero{padding-top:98px}.project-page__cta{margin-top:64px}}
 @media(prefers-reduced-motion:reduce){html.js .reveal{opacity:1;transform:none}.loader{transition-duration:.15s!important}}
+
+
+/* V28 — consistent web typography, wide-screen stability and project-page refinement */
+html {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  font-optical-sizing: auto;
+}
+
+/* Use the same hosted display font and outline treatment on every device. */
+.case-modal__hero h2,
+.case-modal__hero h2 > span,
+.case-modal__hero h2 > em {
+  font-family: var(--display);
+  font-synthesis: none;
+  font-optical-sizing: auto;
+}
+.case-modal__hero h2 > em {
+  color: rgba(255,255,255,.025);
+  -webkit-text-stroke: 1px rgba(255,255,255,.72);
+  paint-order: stroke fill;
+  text-rendering: geometricPrecision;
+  backface-visibility: hidden;
+}
+
+/* Project pages open directly: the loading animation remains on the two homepages only. */
+.project-page .loader { display: none !important; }
+.project-page__cta--minimal {
+  margin-top: 58px;
+  padding-top: 26px;
+}
+.project-page__cta--minimal .project-page__home-link {
+  margin-top: 0;
+}
+
+/* Keep the visual rhythm stable on QHD, ultrawide and 4K displays.
+   Backgrounds stay full-bleed while the editorial content is capped to a 1920px design canvas. */
+@media (min-width: 1921px) {
+  :root {
+    --wide-canvas: 1920px;
+    --wide-gutter: calc((100vw - var(--wide-canvas)) / 2 + 72px);
+  }
+  .site-header,
+  .menu-panel__inner,
+  .hero,
+  .manifesto,
+  .featured-work__head,
+  .project-stage__info,
+  .capabilities,
+  .process,
+  .contact__inner,
+  .site-footer,
+  .project-page__header,
+  .case-modal__hero,
+  .case-modal__body {
+    padding-left: var(--wide-gutter);
+    padding-right: var(--wide-gutter);
+  }
+  .hero__eyebrow { max-width: 998px; }
+  .hero__title .line--offset { margin-left: 288px; }
+  .hero__title .line--accent { margin-left: 96px; }
+  .hero__bottom { margin-left: 940px; }
+  .hero__glow { right: var(--wide-gutter); }
+  .manifesto__grid,
+  .featured-work__title-row { gap: 172px; }
+  .project-copy,
+  .capabilities__intro { gap: 192px; }
+  .sectors__content.section-pad {
+    padding-left: clamp(72px, 5vw, 128px);
+    padding-right: clamp(72px, 5vw, 128px);
+  }
+  .case-objective__content { gap: 150px; }
+}
+
+@media (min-width: 2560px) {
+  .hero__glow {
+    width: 620px;
+    height: 620px;
+    top: 14vh;
+  }
+  .field-network {
+    width: 760px;
+    height: 760px;
+  }
+}
+
+@media (max-width: 900px) {
+  .project-page__cta--minimal {
+    margin-top: 44px;
+    padding-top: 22px;
+  }
+}
+
+/* Skip the intro cleanly after it has already played once in the same browsing session. */
+html.loader-skipped .hero__title .line > span { animation-delay: .08s; }
+html.loader-skipped .hero__title .line:nth-child(2) > span { animation-delay: .16s; }
+html.loader-skipped .hero__title .line:nth-child(3) > span { animation-delay: .24s; }
