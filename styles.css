@@ -3265,7 +3265,7 @@ html.loader-skipped .hero__title .line:nth-child(3) > span { animation-delay: .2
   letter-spacing: .008em !important;
 }
 
-/* Featured-project Gino Severini title: slightly more open than V31. */
+/* V33 — featured-project Gino Severini title: visibly more open tracking. */
 .featured-work__title {
-  letter-spacing: .03em;
+  letter-spacing: .055em;
 }
