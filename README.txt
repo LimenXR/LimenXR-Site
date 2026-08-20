@@ -12,3 +12,5 @@ Modifiche V31:
 - struttura, SEO, favicon, Cloudflare Analytics e pagine V30 preservate.
 
 Caricare tutto il contenuto mantenendo le cartelle.
+
+V32: refined headline tracking after visual review: slightly reduced on the six selected large-title treatments, slightly increased on the featured Gino Severini title. Gallery viewer captions remain hidden.
