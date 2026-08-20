@@ -3216,3 +3216,35 @@ html.loader-skipped .hero__title .line:nth-child(3) > span { animation-delay: .2
   text-rendering: optimizeLegibility;
   backface-visibility: visible;
 }
+
+/* V31 — wider tracking on principal display titles and cleaner image viewer */
+.hero__title,
+.display-copy--threshold,
+.featured-work__title,
+.project-copy h3,
+.capabilities__intro h2,
+.cap-item h3,
+.sectors__content h2,
+.process__header h2,
+.contact h2 {
+  letter-spacing: .018em;
+}
+
+.field-node strong,
+.process-card__copy h3 {
+  letter-spacing: .035em;
+}
+
+/* Keep both lines of the standalone Gino Severini case-study title equally open. */
+.case-modal__hero h2 > span,
+.case-modal__hero h2 > em {
+  letter-spacing: .018em !important;
+}
+
+/* Gallery viewer: keep the image counter, but do not display per-image descriptive titles. */
+.image-viewer__caption {
+  display: none !important;
+}
+.image-viewer__panel figcaption {
+  justify-content: flex-end;
+}
