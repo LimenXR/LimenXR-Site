@@ -3269,3 +3269,27 @@ html.loader-skipped .hero__title .line:nth-child(3) > span { animation-delay: .2
 .featured-work__title {
   letter-spacing: .055em;
 }
+
+/* V34 — English mobile fit and CTA scale */
+@media (max-width: 900px) {
+  /* Keep “MANY WORLDS” on one line without clipping at the right edge. */
+  html[lang="en"] .sectors__content h2 {
+    font-size: clamp(46px, 13.7vw, 66px);
+  }
+
+  /* Give the English closing question a presence closer to the Italian version. */
+  html[lang="en"] .contact h2 {
+    font-size: clamp(44px, 13.5vw, 64px);
+    line-height: .84;
+    letter-spacing: -.055em;
+  }
+}
+
+@media (max-width: 370px) {
+  html[lang="en"] .sectors__content h2 {
+    font-size: 13.4vw;
+  }
+  html[lang="en"] .contact h2 {
+    font-size: 13.2vw;
+  }
+}
