@@ -3305,3 +3305,17 @@ html.loader-skipped .hero__title .line:nth-child(3) > span { animation-delay: .2
     white-space: nowrap;
   }
 }
+
+/* V36 — compact English mobile manifesto heading.
+   Keep the first two phrases together so REAL never sits alone. */
+@media (max-width: 900px) {
+  html[lang="en"] .display-copy--threshold {
+    font-size: clamp(28px, 9vw, 47px);
+    line-height: .94;
+    letter-spacing: 0;
+  }
+  html[lang="en"] .display-copy--threshold .threshold-nowrap {
+    white-space: nowrap;
+  }
+}
+
